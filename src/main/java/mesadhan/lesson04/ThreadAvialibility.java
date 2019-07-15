@@ -1,7 +1,7 @@
 package mesadhan.lesson04;
 
 @SuppressWarnings("Duplicates")
-public class ThreadJoinLambda {
+public class ThreadAvialibility {
 
     public static void main(String[] args) throws InterruptedException {
 
@@ -23,17 +23,11 @@ public class ThreadJoinLambda {
 
 
 
+
         thread1.start();
-        try { Thread.sleep(1000); } catch (Exception e) {}
         thread2.start();
 
-
-        // join method calling so that unit thread align with main thread
-        thread1.join();
-        thread2.join();
-
-
-        System.out.println("Hello, How is going on");
-
+        // check thread is alive or not check
+        System.out.println("Is Thread Still Alive: "+ thread1.isAlive() );
     }
 }

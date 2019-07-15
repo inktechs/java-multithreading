@@ -1,7 +1,7 @@
 package mesadhan.lesson04;
 
 @SuppressWarnings("Duplicates")
-public class ThreadJoinLambda {
+public class ThreadIdentification {
 
     public static void main(String[] args) throws InterruptedException {
 
@@ -23,17 +23,17 @@ public class ThreadJoinLambda {
 
 
 
+        // Set thread name so that identify
+        thread1.setName("Thread: One");
+        thread2.setName("Thread: Two");
+
+
+        // get thread name so that identify
+        System.out.println("Thread Name:"+  thread1.getName() );
+        System.out.println("Thread Name:"+  thread2.getName() );
+
         thread1.start();
-        try { Thread.sleep(1000); } catch (Exception e) {}
         thread2.start();
-
-
-        // join method calling so that unit thread align with main thread
-        thread1.join();
-        thread2.join();
-
-
-        System.out.println("Hello, How is going on");
 
     }
 }

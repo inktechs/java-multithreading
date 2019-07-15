@@ -1,7 +1,7 @@
 package mesadhan.lesson04;
 
 @SuppressWarnings("Duplicates")
-public class ThreadJoinLambda {
+public class ThreadPriority {
 
     public static void main(String[] args) throws InterruptedException {
 
@@ -9,7 +9,7 @@ public class ThreadJoinLambda {
 
         Thread thread1 = new Thread(()->{
             for (int i = 0; i < 5; i++) {
-                System.out.println("Process........1");
+                System.out.println("Process........One");
                 try { Thread.sleep(1000); } catch (Exception e) {}
             }
         });
@@ -22,18 +22,11 @@ public class ThreadJoinLambda {
         });
 
 
+        thread1.setPriority(Thread.MIN_PRIORITY);
+        thread2.setPriority(Thread.MAX_PRIORITY);
 
         thread1.start();
-        try { Thread.sleep(1000); } catch (Exception e) {}
         thread2.start();
-
-
-        // join method calling so that unit thread align with main thread
-        thread1.join();
-        thread2.join();
-
-
-        System.out.println("Hello, How is going on");
 
     }
 }
