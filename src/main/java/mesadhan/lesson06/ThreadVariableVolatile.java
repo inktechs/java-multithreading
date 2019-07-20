@@ -82,3 +82,10 @@ public class ThreadVariableVolatile {
 
     }
 }
+
+
+/*
+About Volatile Fields:
+
+Normal, nonvolatile fields can be cached in registers or caches. Through the declaration of a variable as volatile, you tell the JVM and the compiler to always return the latest written value. This not only applies to the variable itself, but to all values written by the thread that has written to the volatile field. The following shows an example of a volatile instance variable:
+*/
